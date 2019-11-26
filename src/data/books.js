@@ -57,7 +57,7 @@ export const books = [
     id: 6,
     titre: 'Isaac le pirate T1',
     disponible: true,
-    resume: " Isaac Sofer, peintre au 18è siècle essaie de vivre de son talent. Alice, sa belle épouse,fait des petits boulots pour survivre. L'argent est rare et quand Alice découvre qu'Isaac a dépensé 450 francs pour une toile dont elle se fiche éperdument, elle lui explique qu'il faut la revendre.",
+    resume: "Isaac Sofer, peintre au 18è siècle essaie de vivre de son talent. Alice, sa belle épouse,fait des petits boulots pour survivre. L'argent est rare et quand Alice découvre qu'Isaac a dépensé 450 francs pour une toile dont elle se fiche éperdument, elle lui explique qu'il faut la revendre.",
     auteur: 'C. Blain',
     categorie: 'bd',
     image: 'http://a53.idata.over-blog.com/219x300/2/37/80/12/articles/Isaac-le-pirate/9782205049404.gif',
