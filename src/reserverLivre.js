@@ -6,11 +6,14 @@ export const reserverLivre = (livre, btn) => {
 
   const h3LivreR = document.createElement('h3');
   const auteurLivreR = document.createElement('p');
+  const imgLivreR = document.createElement('img');
+
 
   const livreClone = { ...livre };
   h3LivreR.innerText = livreClone.titre;
   auteurLivreR.innerText = livreClone.auteur;
-  divLivre.append(h3LivreR, auteurLivreR);
+  imgLivreR.src = livreClone.image;
+  divLivre.append(h3LivreR, imgLivreR, auteurLivreR);
   divRes.appendChild(divLivre);
   // eslint-disable-next-line no-param-reassign
   btn.disabled = true;

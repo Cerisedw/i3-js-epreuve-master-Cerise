@@ -1,7 +1,6 @@
 import { reserverLivre } from './reserverLivre';
 
 export const listeCreaBook = (livre) => {
-  console.log(livre);
   const liLivre = document.createElement('li');
   const h3Livre = document.createElement('h3');
   const descLivre = document.createElement('p');

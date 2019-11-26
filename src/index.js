@@ -2,16 +2,14 @@ import { creaMeaBD } from './meaBook';
 import { listeCreaBook } from './listeBooks';
 import { emprunter, pageEmprunt } from './emprunter';
 import { viderReservations } from './viderReservations';
+import { cacherLivres } from './cacherLesLivres';
+import { filtrerLivres } from './fonctionFiltre';
 
 // Json
 fetch('../src/data/data.json')
-  .then((res) => {
-    console.log(res);
-    return res.json();
-  })
+  .then((res) => res.json())
   .then((data) => {
     const listeLivres = data.books;
-    console.log(listeLivres);
 
     // Création de la page
     const h1 = document.createElement('h1');
@@ -22,15 +20,48 @@ fetch('../src/data/data.json')
     const main = document.createElement('main');
     const footer = document.createElement('footer');
     const ulLivres = document.createElement('ul');
+    ulLivres.id = 'listeLivres';
 
     if (window.localStorage.getItem('emprunt') === 'true') {
-      console.log('toto');
       pageEmprunt();
     } else {
       document.body.appendChild(h1);
       // append les éléments avec les fonctions de création de contenu
       // le header
+
+      // Bouton de filtre
+      const btnshowAll = document.createElement('button');
+      btnshowAll.innerText = 'Tous les livres';
+      btnshowAll.addEventListener('click', () => {
+        const ulDeLivres = document.getElementById('listeLivres');
+        cacherLivres();
+        listeLivres.forEach((livre) => {
+          ulDeLivres.appendChild(listeCreaBook(livre));
+        });
+      });
+
+      const btnBD = document.createElement('button');
+      btnBD.innerText = 'BDs';
+      btnBD.addEventListener('click', () => {
+        filtrerLivres(listeLivres, 'bd');
+      });
+
+      const btnEssai = document.createElement('button');
+      btnEssai.innerText = 'Essais';
+      btnEssai.addEventListener('click', () => {
+        filtrerLivres(listeLivres, 'essai');
+      });
+
+      const btnRoman = document.createElement('button');
+      btnRoman.innerText = 'Romans';
+      btnRoman.addEventListener('click', () => {
+        filtrerLivres(listeLivres, 'roman');
+      });
+
+
       header.appendChild(creaMeaBD(listeLivres));
+      header.append(btnshowAll, btnBD, btnEssai, btnRoman);
+
 
       document.body.appendChild(header);
 
@@ -65,6 +96,3 @@ fetch('../src/data/data.json')
       document.body.appendChild(footer);
     }
   });
-
-
-// import $ from 'jquery';
