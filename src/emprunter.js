@@ -23,6 +23,7 @@ export const emprunter = () => {
   if (nmbL < 1) {
     // eslint-disable-next-line no-alert
     alert('Vous ne pouvez pas faire un emprunt vide');
+    reloadPage();
   } else {
     document.body.innerHTML = '';
     const h2 = document.createElement('h2');
