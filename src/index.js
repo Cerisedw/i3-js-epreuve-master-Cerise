@@ -91,7 +91,7 @@ fetch('../src/data/data.json')
 
       const divReservation = document.createElement('div');
       divReservation.id = 'reservations';
-      footer.append(h2Footer, btnEmprunter, divReservation, btnAnnuler);
+      footer.append(h2Footer, divReservation, btnEmprunter, btnAnnuler);
 
       document.body.appendChild(footer);
     }
