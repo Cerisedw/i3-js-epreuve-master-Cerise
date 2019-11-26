@@ -12,7 +12,7 @@ export const reserverLivre = (livre, btn) => {
   const livreClone = { ...livre };
   h3LivreR.innerText = livreClone.titre;
   auteurLivreR.innerText = livreClone.auteur;
-  imgLivreR.src = livreClone.image;
+  imgLivreR.src = (livreClone.image === '') ? './assets/images/book-default.png' : `${livreClone.image}`;
   divLivre.append(h3LivreR, imgLivreR, auteurLivreR);
   divRes.appendChild(divLivre);
   // eslint-disable-next-line no-param-reassign
