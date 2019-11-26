@@ -1,0 +1,48 @@
+@import "./styles/01variables";
+@import "./styles/02fonts";
+@import "./styles/03base";
+
+main {
+    width: 100%;
+}
+
+img {
+    max-width: 200px;
+}
+#meaBook, footer {
+    padding: 15px 25px;
+    border: solid 2px grey;
+    h2 {
+        margin: 0 0 10px 0;
+    }
+}
+
+#meaBook {
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    margin: 7.5px 15px;
+    float:left;
+    padding: 10px;
+    max-width: 400px;
+    min-width: 300px;;
+    color: white;
+}
+
+.bd{
+    background-color: $primary-color;
+}
+.essai {
+    background-color: $secondary-color;
+}
+    .roman {
+    background-color: $third-color;
+}
+
